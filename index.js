@@ -5,7 +5,8 @@ const activeAlarms = document.querySelector(".alarms-list");
 const setAlarm = document.getElementById("set");
 const clearAllButton = document.querySelector(".clear");
 const variation = document.getElementById("select-variation")
-const alarmSound = new Audio("./alarm.mp3");
+// const alarmSound = new Audio("./alarm.mp3");
+const am_pm = document.getElementById("am-pm");
 
 let alarmIndex = 0;
 let alarmsArray = [];
@@ -46,6 +47,14 @@ const createAlarm = (hour, minute) => {
     alarmDiv.className = "alarm";
     alarmDiv.dataset.id = alarmObj.id;
     alarmDiv.innerHTML = `<span>${alarmObj.time}</span>`;
+    
+    //Create a div for the AM/PM value
+    const am_pm_value = am_pm.value;
+    console.log(am_pm_value)
+    const am_pm_div = document.createElement("div");
+    am_pm_div.className = "am-pm";
+    am_pm_div.innerHTML = `<span>${am_pm_value}</span>`;
+    alarmDiv.appendChild(am_pm_div);
 
     // Create a checkbox to activate/deactivate the alarm
     const checkbox = document.createElement("input");
@@ -74,7 +83,7 @@ const toggleAlarm = (alarm) => {
             alarmSound.play();
         }
     } else {
-        alarmSound.pause();
+        alarmSound.pause(); 
     }
 };
 

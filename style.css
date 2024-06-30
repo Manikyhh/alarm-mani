@@ -106,8 +106,8 @@ button#set:hover{
 
 
 .alarm{
-    display: grid;
-    grid-template-columns: 9fr 1fr 2fr;
+    gap: 78px;
+    display: flex;
     margin-top: 1.5em;
     align-items: center;
     border-bottom: 1px dashed #ccc;
@@ -162,4 +162,11 @@ button#set:hover{
     .wrapper{
         width: 80%;
     }
+}
+#am-pm{
+    padding: 9px 2px;
+    color: #e9ecef;
+    background: black;
+    border-radius: 6px;
+    cursor: pointer;
 }
